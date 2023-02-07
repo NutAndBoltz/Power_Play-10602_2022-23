@@ -1,9 +1,11 @@
+package org.firstinspires.ftc.teamcode;
+
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 @TeleOp
-public class RedRight extends LinearOpMode {
+public class ContinuousLinearSlides extends LinearOpMode {
     public robotInit robot = new robotInit();
     ElapsedTime runtime = new ElapsedTime();
     //    public class releaseLeftClaw implements Runnable {
@@ -35,20 +37,20 @@ public class RedRight extends LinearOpMode {
         while (opModeIsActive()) {
             //VARIABLES INITIALIZATION
             //WHEELS
-            double vertical = 0.8*(-gamepad2.left_stick_y); //move forward, backward
-            double horizontal = 0.8*(gamepad2.left_stick_x); //move left, right
-            double turn = .5*(-gamepad2.right_stick_x); //turn left, right
+            double vertical = 0.80*(-gamepad2.left_stick_y); //move forward, backward
+            double horizontal = 0.80*(gamepad2.left_stick_x); //move left, right
+            double turn = 0.80*(-gamepad2.right_stick_x); //turn left, right
 
 
             //SLIDER
             boolean buttonY = gamepad1.y;
             boolean buttonA = gamepad1.a;
 
-            double armDown = -0.5*gamepad1.left_trigger; // brings linear slides down
-            double armUp = gamepad1.right_trigger; // brings linear slides up
+            double armDown = gamepad1.left_trigger; // brings linear slides down
+            double armUp = -gamepad1.right_trigger; // brings linear slides up
 
             //SPINNER
-            double turntable = 0.35*(-gamepad1.right_stick_x); // turning on the turntable
+            double turntable = (-gamepad1.right_stick_x); // turning on the turntable
             robot.waiter.setPower(turntable);
 
             //CLAW
@@ -76,14 +78,14 @@ public class RedRight extends LinearOpMode {
             //clamp and release cone with closer servo PROBLEM WITH SERVOS
             if (clamp) {
                 robot.closerL.setPosition(0); //Rotates clockwise
-              //  robot.closerR.setPosition(0.6); //Rotates clockwise
+                // robot.closerR.setPosition(0.6); //Rotates clockwise
 //                robot.closerR.setPosition(0); //Rotates counterclockwise
                 telemetry.addData("CURRENT ACTION:", "clamp pressed");
                 telemetry.update();
             }
             if (release) {
                 robot.closerL.setPosition(0.5); //release cone with closer servo
-               // robot.closerR.setPosition(0.6); //release cone with closer servo
+                // robot.closerR.setPosition(0); //release cone with closer servo
 //                robot.closerR.setPosition(.5); //release cone with closer servo
                 telemetry.addData("CURRENT ACTION", "Release pressed");
                 telemetry.update();

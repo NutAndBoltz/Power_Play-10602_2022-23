@@ -1,3 +1,5 @@
+package org.firstinspires.ftc.teamcode;
+
 import org.opencv.calib3d.Calib3d;
 import org.opencv.core.CvType;
 import org.opencv.core.Mat;
@@ -72,7 +74,7 @@ class AprilTagDetectionPipeline extends OpenCvPipeline
         }
         else
         {
-            System.out.println("AprilTagDetectionPipeline.finalize(): nativeApriltagPtr was NULL");
+            System.out.println("org.firstinspires.ftc.teamcode.AprilTagDetectionPipeline.finalize(): nativeApriltagPtr was NULL");
         }
     }
 

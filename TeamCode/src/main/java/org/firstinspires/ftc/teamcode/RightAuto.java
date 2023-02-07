@@ -1,3 +1,5 @@
+package org.firstinspires.ftc.teamcode;
+
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
@@ -11,8 +13,8 @@ import org.openftc.easyopencv.OpenCvCameraRotation;
 
 import java.util.ArrayList;
 
-@Autonomous(name="LeftAuto", group="Pushbot")
-public class LeftAuto extends LinearOpMode
+@Autonomous(name="org.firstinspires.ftc.teamcode.RightAuto", group="Pushbot")
+public class RightAuto extends LinearOpMode
 {
     //INTRODUCE VARIABLES HERE
 
@@ -153,190 +155,115 @@ public class LeftAuto extends LinearOpMode
                 telemetry.update();
             }
 
-            //PUT AUTO CODE HERE (DRIVER PRESSED THE PLAY BUTTON!)
+            //PUT AUTON CODE HERE (DRIVER PRESSED THE PLAY BUTTON!)
 
-            sleep(2000);
-//            placeCones();
 
             /* Actually do something useful */
             if(tagOfInterest == null){
                 //default trajectory here if preferred
+                sleep(2000);
                 telemetry.addLine("Null: middle trajectory");
                 telemetry.update();
 
-                //park middle
-//park right
-
                 clampCone();
-                raise(1);
+                raise(500);
                 moveForward(65);
-                raise(3);
+                raise(2500);
                 moveLeft(5);
-                raise(2);
-
+                raise(-200);
                 releaseCone();
-                raise(3);
+//        runtime.reset();
+//        while (opModeIsActive() && runtime.seconds() < 2.0) {
+//            telemetry.addData("Path", "Leg 1: %4.1f S Elapsed", runtime.seconds());
+//            telemetry.update();
+//        }
                 moveRight(5);
-                raise(0);
+                lower(2500);
                 moveBackward(12);
                 //park middle
                 //stay
 
-//                raise(900);
-//                moveLeft(30);
-//                moveRight(2);
-//                moveForward(55);
-//                raise(-230);
-//                moveLeft(4);
-//                clampCone();
-//                raise(500);
-//                moveRight(7);
-//                turnright(50);
-//                moveRight(5);
-//                moveForward(20);
-//                moveLeft(3);
-//                moveForward(2);
-//                releaseCone();
-//                moveBackward(5);
-//                moveRight(10);
 
             }else if(tagOfInterest.id == LEFT){
                 //left trajectory
+                sleep(2000);
                 telemetry.addLine("Left trajectory");
                 telemetry.update();
 
                 //park left
-
-                //park left
                 clampCone();
-                raise(1);
+                raise(500);
                 moveForward(65);
-                raise(3);
+                raise(2500);
                 moveLeft(5);
-                raise(2);
-
+                raise(-200);
                 releaseCone();
-                raise(3);
+//        runtime.reset();
+//        while (opModeIsActive() && runtime.seconds() < 2.0) {
+//            telemetry.addData("Path", "Leg 1: %4.1f S Elapsed", runtime.seconds());
+//            telemetry.update();
+//        }
                 moveRight(5);
-                raise(0);
+                lower(2500);
                 moveBackward(12);
                 moveLeft(30);
 
-//                raise(800);
-//                moveLeft(25);
-//                moveRight(3);
-//                moveForward(55);
-//                raise(-200);
-//                clampCone();
-//                raise(500);
-//                moveBackward(7);
-//                turnright(20);
-//                moveRight(5);
-//                moveForward(20);
-//                moveLeft(3);
-//                moveForward(2);
-//                releaseCone();
-//                moveBackward(5);
-//                moveRight(10);
-//                moveBackward(30);
 
             }else if(tagOfInterest.id == MIDDLE){
                 //middle trajectory
+               sleep(2000);
                 telemetry.addLine("Middle trajectory");
                 telemetry.update();
 
-
                 //park middle
                 //stay
                 clampCone();
-                raise(1);
+                raise(500);
                 moveForward(65);
-                raise(3);
+                raise(2500);
                 moveLeft(5);
-                raise(2);
-
+                raise(-200);
                 releaseCone();
-                raise(3);
+//        runtime.reset();
+//        while (opModeIsActive() && runtime.seconds() < 2.0) {
+//            telemetry.addData("Path", "Leg 1: %4.1f S Elapsed", runtime.seconds());
+//            telemetry.update();
+//        }
                 moveRight(5);
-                raise(0);
+                lower(2500);
                 moveBackward(12);
-
-//                //park right
-//                raise(800);
-//                moveLeft(25);
-//                moveRight(3);
-//                moveForward(55);
-//                raise(-200);
-//                clampCone();
-//                raise(500);
-//                moveBackward(7);
-//                turnright(20);
-//                moveRight(5);
-//                moveForward(20);
-//                moveLeft(3);
-//                moveForward(2);
-//                releaseCone();
-//                moveBackward(5);
-//                moveRight(10);
-
-                //park middle
-                //stay
-
 
             }else{
                 //right trajectory
+                sleep(2000);
                 telemetry.addLine("Right trajectory");
                 telemetry.update();
 
-
                 //park right
                 clampCone();
-                raise(1);
+                raise(500);
                 moveForward(65);
-                raise(3);
+                raise(2500);
                 moveLeft(5);
-                raise(2);
-
+                raise(-200);
                 releaseCone();
-                raise(3);
-                moveRight(5);
-                raise(0);
 //        runtime.reset();
 //        while (opModeIsActive() && runtime.seconds() < 2.0) {
 //            telemetry.addData("Path", "Leg 1: %4.1f S Elapsed", runtime.seconds());
 //            telemetry.update();
 //        }
-
+                moveRight(5);
+                lower(2500);
                 moveBackward(12);
                 moveRight(30);
-
-//                //park right
-//                raise(800);
-//                moveLeft(25);
-//                moveRight(3);
-//                moveForward(55);
-//                raise(-200);
-//                clampCone();
-//                raise(500);
-//                moveBackward(7);
-//                turnright(20);
-//                moveRight(5);
-//                moveForward(20);
-//                moveLeft(3);
-//                moveForward(2);
-//                releaseCone();
-//                moveBackward(5);
-//                moveRight(10);
-//                moveForward(30);
-//        runtime.reset();
-//        while (opModeIsActive() && runtime.seconds() < 2.0) {
-//            telemetry.addData("Path", "Leg 1: %4.1f S Elapsed", runtime.seconds());
-//            telemetry.update();
-//        }
 
             }
 
             //stop robot
+            sleep(1000);     // pause for servos to move
+
+            telemetry.addData("Path", "Complete");
+            telemetry.update();
             stop();
 
         }
@@ -380,9 +307,9 @@ public class LeftAuto extends LinearOpMode
     public void placeCones() {
         clampCone();
         raise(500);
-        moveForward(64.5);
+        moveForward(66);
         raise(2500);
-        moveRight(5);
+        moveLeft(5);
         raise(-200);
         releaseCone();
 //        runtime.reset();
@@ -390,16 +317,16 @@ public class LeftAuto extends LinearOpMode
 //            telemetry.addData("Path", "Leg 1: %4.1f S Elapsed", runtime.seconds());
 //            telemetry.update();
 //        }
-        moveLeft(5);
+        moveRight(10);
         lower(2500);
-        moveBackward(12);
+        moveBackward(15);
     }
 
     public void clampCone() {
 
         robot.closerL.setPosition(0);
         runtime.reset();
-        while (opModeIsActive() && (runtime.seconds() < 3.0)) {
+        while (opModeIsActive() && (runtime.seconds() < 2.0)) {
             telemetry.addData("Path", "Leg 1: %4.1f S Elapsed", runtime.seconds());
             telemetry.update();
         }
@@ -409,7 +336,7 @@ public class LeftAuto extends LinearOpMode
     public void releaseCone() {
         robot.closerL.setPosition(.5); // open claw
         runtime.reset();
-        while (opModeIsActive() && (runtime.seconds() < 3.0)) {
+        while (opModeIsActive() && (runtime.seconds() < 2.0)) {
             telemetry.addData("Path", "Leg 1: %4.1f S Elapsed", runtime.seconds());
             telemetry.update();
         }
@@ -581,7 +508,7 @@ public class LeftAuto extends LinearOpMode
         runtime.reset();
         while (opModeIsActive() && (robot.motorFL.isBusy() || robot.motorFR.isBusy() || robot.motorBL.isBusy() || robot.motorBR.isBusy())) {
             // Display it for the driver.
-            telemetry.addData("Path1",  "Running to %7d :%7d", newmotorFLTarget, newmotorFRTarget );
+            telemetry.addData("Path1",  "Running to %7d :%7d", newmotorFLTarget, newmotorFRTarget);
             telemetry.update();
         }
 
@@ -679,93 +606,47 @@ public class LeftAuto extends LinearOpMode
         robot.motorBR.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
     }
 
+    //RAISE ARM FUNCTION
+    public void raise(double count) {
 
-    public int SLIDER_SPEED = 10;
-    public int currentPosition = 0;
-
-    public void raise(int numberOfJunction) {
-        double currentSpeed = currentPosition<numberOfJunction? Math.abs(SLIDER_SPEED):Math.abs(SLIDER_SPEED)*0.2;
-        int[] positionSet;
-
-
-
-
-
-        int LOW_JUNCTION = 1100 + 135;
-        int MEDIUM_JUNCTION = LOW_JUNCTION+1050 - 50 ;
-        int HIGH_JUNCTION = MEDIUM_JUNCTION+1050 -50;
-
-//        int GROUND_JUNCTION = 125;
-        int GROUND_JUNCTION = 60;
-
-
-        // allocates memory for 10 integers
-        positionSet = new int[] {GROUND_JUNCTION, LOW_JUNCTION, MEDIUM_JUNCTION, HIGH_JUNCTION};
-
-
-        int newArmLiftTargetRight;
-        int newArmLiftTargetLeft;
-
+        int newArmLiftLeftTarget;
+        int newArmLiftRightTarget;
 
         // Determine new target position, and pass to motor controller
-        newArmLiftTargetRight = positionSet[numberOfJunction];
-        newArmLiftTargetLeft =  positionSet[numberOfJunction];
-
-        robot.armLiftLeft.setTargetPosition(newArmLiftTargetLeft);
-        robot.armLiftRight.setTargetPosition(newArmLiftTargetRight);
+        newArmLiftLeftTarget = robot.armLiftLeft.getCurrentPosition() - (int) (count);
+        newArmLiftRightTarget = robot.armLiftRight.getCurrentPosition() - (int) (count);
+        robot.armLiftLeft.setTargetPosition(newArmLiftLeftTarget);
+        robot.armLiftRight.setTargetPosition(newArmLiftRightTarget);
 
         // Turn On RUN_TO_POSITION
         robot.armLiftLeft.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         robot.armLiftRight.setMode(DcMotor.RunMode.RUN_TO_POSITION);
 
-        robot.armLiftLeft.setPower(currentSpeed);
-        robot.armLiftRight.setPower(currentSpeed);
-
-        currentPosition = numberOfJunction;
-        while (opModeIsActive() && robot.armLiftLeft.isBusy() && robot.armLiftRight.isBusy()) {
+        robot.armLiftLeft.setPower(Math.abs(robot.ARM_SPEED_RISING));
+        robot.armLiftRight.setPower(Math.abs(robot.ARM_SPEED_RISING));
+        runtime.reset();
+        while (opModeIsActive() && (robot.armLiftLeft.isBusy() || robot.armLiftRight.isBusy())) {
             // Display it for the driver.
-            telemetry.addData("CURRENT ACTION: ",  "RAISING TO THE " + numberOfJunction);
+            telemetry.addData("Path1",  "Running to %7d :%7d", newArmLiftLeftTarget, newArmLiftRightTarget);
             telemetry.update();
-
-
         }
 
-    }
+        //TRIAL 1: Both commented, arm stops before moveLeft
+        //TRIAL 2: Commenting stopRobot() and moveLeft, arm keeps rising and doesn't do later code
+        //TRIAL 3: Comment out stop, encoder, and moveLeft
+        //TRIAL 4: comment out encoder, works! (the arm raises and stops raising)
+        //TRIAL 5: uncomment raise() after moveForward(), doesn't raise the arm at the specified height
+        //TRIAL 6:
 
-
-//    //RAISE ARM FUNCTION
-//    public void raise(double count) {
-//
-//        int newArmLiftLeftTarget;
-//        int newArmLiftRightTarget;
-//
-//        // Determine new target position, and pass to motor controller
-//        newArmLiftLeftTarget = robot.armLiftLeft.getCurrentPosition() - (int) (count);
-//        newArmLiftRightTarget = robot.armLiftRight.getCurrentPosition() - (int) (count);
-//        robot.armLiftLeft.setTargetPosition(newArmLiftLeftTarget);
-//        robot.armLiftRight.setTargetPosition(newArmLiftRightTarget);
-//
-//        // Turn On RUN_TO_POSITION
-//        robot.armLiftLeft.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-//        robot.armLiftRight.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-//
-//        robot.armLiftLeft.setPower(Math.abs(robot.ARM_SPEED));
-//        robot.armLiftRight.setPower(Math.abs(robot.ARM_SPEED));
-//        runtime.reset();
-//        while (opModeIsActive() && (robot.armLiftLeft.isBusy() || robot.armLiftRight.isBusy())) {
-//            // Display it for the driver.
-//            telemetry.addData("Path1",  "Running to %7d :%7d", newArmLiftLeftTarget, newArmLiftRightTarget);
-//            telemetry.update();
-//        }
 
         // Stop all motion;
-//        stopRobot();
+        stopRobot();
 
-        // Turn off RUN_TO_POSITION
+        //Turn off RUN_TO_POSITION
 //        robot.armLiftLeft.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
 //        robot.armLiftRight.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
 
-//    }
+    }
 
     //LOWER ARM FUNCTION
     public void lower(double count) {
@@ -783,8 +664,8 @@ public class LeftAuto extends LinearOpMode
         robot.armLiftRight.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         robot.armLiftLeft.setMode(DcMotor.RunMode.RUN_TO_POSITION);
 
-        robot.armLiftRight.setPower(Math.abs(robot.ARM_SPEED));
-        robot.armLiftLeft.setPower(Math.abs(robot.ARM_SPEED));
+        robot.armLiftRight.setPower(Math.abs(robot.ARM_SPEED_LOWER));
+        robot.armLiftLeft.setPower(Math.abs(robot.ARM_SPEED_LOWER));
         runtime.reset();
         while (opModeIsActive() && (robot.armLiftLeft.isBusy() || robot.armLiftRight.isBusy())) {
             // Display it for the driver.
@@ -794,10 +675,10 @@ public class LeftAuto extends LinearOpMode
 
         // Stop all motion;
         stopRobot();
-
-        // Turn off RUN_TO_POSITION
-        robot.armLiftLeft.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        robot.armLiftRight.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+//
+//        // Turn off RUN_TO_POSITION
+//        robot.armLiftLeft.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+//        robot.armLiftRight.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
 
     }
 
