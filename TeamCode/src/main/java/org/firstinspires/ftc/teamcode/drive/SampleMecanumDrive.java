@@ -272,7 +272,7 @@ public class SampleMecanumDrive extends MecanumDrive {
     public double getRawExternalHeading() {
         return 0;
     }
-    
+
     public static TrajectoryVelocityConstraint getVelocityConstraint(double maxVel, double maxAngularVel, double trackWidth) {
         return new MinVelocityConstraint(Arrays.asList(
                 new AngularVelocityConstraint(maxAngularVel),
